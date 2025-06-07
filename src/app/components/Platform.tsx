@@ -87,11 +87,32 @@ export default function Platform() {
     <section id="plataforma" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Plataforma <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-800">Digital</span>
+        <div className="scroll-animate" style={{
+          textAlign: 'center',
+          marginBottom: '5rem'
+        }}>
+          <h2 className="scroll-animate" style={{
+            fontSize: 'clamp(2.25rem, 5vw, 3rem)',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '1.5rem',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Plataforma <span style={{
+              background: 'linear-gradient(135deg, #1e3a8a, #0f766e)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Digital</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="scroll-animate" style={{
+            fontSize: '1.25rem',
+            color: '#6b7280',
+            maxWidth: '64rem',
+            margin: '0 auto',
+            lineHeight: '1.75',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
             Nuestra plataforma integral revoluciona la gestión médica con tecnología de vanguardia, 
             automatización inteligente y una experiencia de usuario excepcional.
           </p>
@@ -162,17 +183,53 @@ export default function Platform() {
             </div>
             
             {/* Floating stats */}
-            <div className="absolute -top-4 -left-4 bg-white rounded-xl shadow-xl p-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-900">99.9%</div>
-                <div className="text-sm text-gray-600">Uptime</div>
+            <div style={{
+              position: 'absolute',
+              top: '-1rem',
+              left: '-1rem',
+              backgroundColor: 'white',
+              borderRadius: '0.75rem',
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+              padding: '1rem',
+              zIndex: 10
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  color: '#1e3a8a',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>99.9%</div>
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>Uptime</div>
               </div>
             </div>
             
-            <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-xl p-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-teal-800">24/7</div>
-                <div className="text-sm text-gray-600">Soporte</div>
+            <div style={{
+              position: 'absolute',
+              bottom: '-1rem',
+              right: '-1rem',
+              backgroundColor: 'white',
+              borderRadius: '0.75rem',
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+              padding: '1rem',
+              zIndex: 10
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  color: '#0f766e',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>24/7</div>
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>Soporte</div>
               </div>
             </div>
           </div>
@@ -198,16 +255,74 @@ export default function Platform() {
 
         {/* Modules Section */}
         <div>
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 style={{
+            fontSize: '1.875rem',
+            fontWeight: 'bold',
+            color: '#111827',
+            textAlign: 'center',
+            marginBottom: '3rem',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
             Módulos Especializados
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '2rem'
+          }}>
             {modules.map((module, index) => (
-              <div key={index} className={`bg-gradient-to-r ${module.color} rounded-2xl p-8 text-white`}>
-                <h4 className="text-2xl font-bold mb-4">{module.title}</h4>
-                <p className="text-lg leading-relaxed opacity-90">{module.description}</p>
-                <div className="mt-6">
-                  <button className="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-xl font-medium transition-all duration-200">
+              <div key={index} style={{
+                background: index === 0 ? 'linear-gradient(135deg, #3b82f6, #2563eb)' :
+                           index === 1 ? 'linear-gradient(135deg, #14b8a6, #0d9488)' :
+                           index === 2 ? 'linear-gradient(135deg, #22c55e, #16a34a)' :
+                           'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+                borderRadius: '1rem',
+                padding: '2rem',
+                color: 'white',
+                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+              }}
+              >
+                <h4 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  marginBottom: '1rem',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>{module.title}</h4>
+                <p style={{
+                  fontSize: '1.125rem',
+                  lineHeight: '1.75',
+                  opacity: '0.9',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}>{module.description}</p>
+                <div style={{ marginTop: '1.5rem' }}>
+                  <button style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    padding: '0.5rem 1.5rem',
+                    borderRadius: '0.75rem',
+                    fontWeight: '500',
+                    transition: 'background-color 0.2s ease',
+                    border: 'none',
+                    color: 'white',
+                    cursor: 'pointer',
+                    fontFamily: 'Inter, -apple-system, sans-serif'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                  }}
+                  >
                     Ver detalles →
                   </button>
                 </div>

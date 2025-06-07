@@ -55,57 +55,160 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicios" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicios" style={{
+      paddingTop: '6rem',
+      paddingBottom: '6rem',
+      backgroundColor: 'white'
+    }}>
+      <div style={{
+        maxWidth: '80rem',
+        margin: '0 auto',
+        padding: '0 1rem'
+      }}>
         {/* Header */}
-        <div className="text-center mb-20 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-shadow">
-            Nuestros <span className="text-gradient">Servicios</span>
+        <div className="scroll-animate" style={{
+          textAlign: 'center',
+          marginBottom: '5rem'
+        }}>
+          <h2 className="scroll-animate" style={{
+            fontSize: 'clamp(2.25rem, 5vw, 3rem)',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '1.5rem',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Nuestros <span style={{
+              background: 'linear-gradient(135deg, #1e3a8a, #0f766e)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Servicios</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed scroll-animate">
+          <p className="scroll-animate" style={{
+            fontSize: '1.25rem',
+            color: '#6b7280',
+            maxWidth: '64rem',
+            margin: '0 auto',
+            lineHeight: '1.75',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
             Combinamos nuestra plataforma digital de vanguardia con servicios especializados para ofrecer soluciones integrales 
             que transforman la gestión de organizaciones de salud en toda Argentina.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="space-y-20">
+        <div style={{ marginBottom: '5rem' }}>
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center service-card scroll-animate ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}
+              className="lg:grid-cols-2 service-card scroll-animate"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr',
+                gap: '3rem',
+                alignItems: 'center',
+                marginBottom: index < services.length - 1 ? '5rem' : '0'
+              }}
             >
               {/* Content */}
-              <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''} scroll-animate`}>
+              <div className="scroll-animate" style={{
+                order: 1
+              }}>
                 <div>
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${service.bgColor} rounded-2xl text-white mb-6 card-hover`}>
+                  <div className="scroll-animate" style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '4rem',
+                    height: '4rem',
+                    background: index === 0 ? '#1e3a8a' : 
+                               index === 1 ? '#0f766e' : 
+                               index === 2 ? '#059669' : '#7c3aed',
+                    borderRadius: '1rem',
+                    color: 'white',
+                    marginBottom: '1.5rem',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  >
                     {service.icon}
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4 text-shadow-sm scroll-animate">
+                  <h3 className="scroll-animate" style={{
+                    fontSize: '1.875rem',
+                    fontWeight: 'bold',
+                    color: '#111827',
+                    marginBottom: '1rem',
+                    fontFamily: 'Inter, -apple-system, sans-serif'
+                  }}>
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6 scroll-animate">
+                  <p className="scroll-animate" style={{
+                    fontSize: '1.125rem',
+                    color: '#6b7280',
+                    lineHeight: '1.75',
+                    marginBottom: '1.5rem',
+                    fontFamily: 'Inter, -apple-system, sans-serif'
+                  }}>
                     {service.description}
                   </p>
                 </div>
 
                 {/* Features */}
-                <div className="space-y-3 scroll-animate">
+                <div className="scroll-animate" style={{ marginBottom: '2rem' }}>
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-3 feature-card scroll-animate">
-                      <div className="w-2 h-2 bg-blue-900 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">{feature}</span>
+                    <div key={featureIndex} className="feature-card scroll-animate" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: '0.75rem'
+                    }}>
+                      <div style={{
+                        width: '0.5rem',
+                        height: '0.5rem',
+                        backgroundColor: '#1e3a8a',
+                        borderRadius: '50%',
+                        marginRight: '0.75rem'
+                      }}></div>
+                      <span style={{
+                        color: '#374151',
+                        fontWeight: '500',
+                        fontFamily: 'Inter, -apple-system, sans-serif'
+                      }}>{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* CTA Button */}
-                <div className="pt-4 scroll-animate">
-                  <button className="btn-primary card-hover group">
+                <div className="scroll-animate" style={{ paddingTop: '1rem' }}>
+                  <button style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#1e3a8a',
+                    color: 'white',
+                    borderRadius: '0.75rem',
+                    fontWeight: '500',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    fontFamily: 'Inter, -apple-system, sans-serif'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1e40af';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1e3a8a';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                  }}
+                  >
                     Conocer más
-                    <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg style={{ marginLeft: '0.5rem', width: '1.25rem', height: '1.25rem' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </button>
@@ -113,22 +216,57 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''} scroll-animate`}>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl image-hover card-hover">
+              <div className="scroll-animate" style={{
+                position: 'relative',
+                order: 2
+              }}>
+                <div style={{
+                  position: 'relative',
+                  borderRadius: '1rem',
+                  overflow: 'hidden',
+                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                >
                   <Image
                     src={service.image}
                     alt={`${service.title} - Vada Health Argentina`}
                     width={600}
                     height={400}
-                    className="w-full h-auto object-cover"
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(17, 24, 39, 0.3), transparent)'
+                  }}></div>
                 </div>
                 
-                {/* Floating badge simplificado */}
-                <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 scroll-animate">
-                  <div className={`w-12 h-12 ${service.bgColor} rounded-full flex items-center justify-center text-white`}>
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {/* Floating badge */}
+                <div className="scroll-animate" style={{
+                  position: 'absolute',
+                  top: '-1.5rem',
+                  right: '-1.5rem',
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+                  padding: '1rem'
+                }}>
+                  <div style={{
+                    width: '3rem',
+                    height: '3rem',
+                    background: index === 0 ? '#1e3a8a' : 
+                               index === 1 ? '#0f766e' : 
+                               index === 2 ? '#059669' : '#7c3aed',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white'
+                  }}>
+                    <svg style={{ width: '1.5rem', height: '1.5rem' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -139,23 +277,96 @@ export default function Services() {
         </div>
 
         {/* Integration CTA */}
-        <div className="mt-20 text-center scroll-animate">
-          <div className="gradient-animate rounded-2xl p-12 text-white glass-effect card-hover">
-            <h3 className="text-3xl font-bold mb-4 text-shadow scroll-animate">
+        <div className="scroll-animate" style={{ marginTop: '5rem', textAlign: 'center' }}>
+          <div className="scroll-animate" style={{
+            background: 'linear-gradient(135deg, #1e3a8a, #0f766e)',
+            borderRadius: '1rem',
+            padding: '3rem',
+            color: 'white',
+            boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
+            transition: 'transform 0.2s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+          >
+            <h3 className="scroll-animate" style={{
+              fontSize: '1.875rem',
+              fontWeight: 'bold',
+              marginBottom: '1rem',
+              fontFamily: 'Inter, -apple-system, sans-serif'
+            }}>
               Solución Integral: Plataforma + Servicios
             </h3>
-            <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90 scroll-animate">
+            <p className="scroll-animate" style={{
+              fontSize: '1.125rem',
+              marginBottom: '2rem',
+              maxWidth: '48rem',
+              margin: '0 auto 2rem auto',
+              opacity: '0.9',
+              fontFamily: 'Inter, -apple-system, sans-serif'
+            }}>
               Potencia tu organización de salud con la combinación perfecta: nuestra plataforma digital de gestión médica 
               integrada con servicios especializados de auditoría, suministros y consultoría.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-animate">
-              <button className="btn-primary group" style={{backgroundColor: 'white', color: '#1e3a8a'}}>
+            <div className="sm:flex-row scroll-animate" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <button style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '0.75rem 2rem',
+                backgroundColor: 'white',
+                color: '#1e3a8a',
+                borderRadius: '0.75rem',
+                fontWeight: '500',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                fontFamily: 'Inter, -apple-system, sans-serif'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f9fafb';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              }}
+              >
                 Solicitar evaluación gratuita
-                <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg style={{ marginLeft: '0.5rem', width: '1.25rem', height: '1.25rem' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
-              <button className="btn-secondary" style={{borderColor: 'white', color: 'white'}}>
+              <button style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '0.75rem 2rem',
+                backgroundColor: 'transparent',
+                color: 'white',
+                borderRadius: '0.75rem',
+                fontWeight: '500',
+                border: '2px solid white',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                fontFamily: 'Inter, -apple-system, sans-serif'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.color = '#1e3a8a';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'white';
+              }}
+              >
                 Ver casos de éxito
               </button>
             </div>
