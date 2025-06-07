@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ClientAnimations from "../components/ClientAnimations";
+import SmoothScrollNav, { ScrollToTopButton } from "../components/SmoothScrollNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,6 +54,18 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
+        <ClientAnimations />
+        <SmoothScrollNav 
+          items={[
+            { id: 'hero', label: 'Inicio', icon: '🏠' },
+            { id: 'servicios', label: 'Servicios', icon: '⚕️' },
+            { id: 'plataforma', label: 'Plataforma', icon: '💻' },
+            { id: 'about', label: 'Nosotros', icon: '👥' },
+            { id: 'testimonios', label: 'Testimonios', icon: '⭐' },
+            { id: 'contacto', label: 'Contacto', icon: '📞' }
+          ]}
+        />
+        <ScrollToTopButton />
       </body>
     </html>
   );

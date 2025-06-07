@@ -58,11 +58,11 @@ export default function Services() {
     <section id="servicios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-teal-800">Servicios</span>
+        <div className="text-center mb-20 scroll-animate">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-shadow">
+            Nuestros <span className="text-gradient">Servicios</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed scroll-animate">
             Combinamos nuestra plataforma digital de vanguardia con servicios especializados para ofrecer soluciones integrales 
             que transforman la gestión de organizaciones de salud en toda Argentina.
           </p>
@@ -73,28 +73,28 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center service-card scroll-animate ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
             >
               {/* Content */}
-              <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+              <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''} scroll-animate`}>
                 <div>
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${service.bgColor} rounded-2xl text-white mb-6`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${service.bgColor} rounded-2xl text-white mb-6 card-hover`}>
                     {service.icon}
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4 text-shadow-sm scroll-animate">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6 scroll-animate">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Features */}
-                <div className="space-y-3">
+                <div className="space-y-3 scroll-animate">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-3">
+                    <div key={featureIndex} className="flex items-center space-x-3 feature-card scroll-animate">
                       <div className="w-2 h-2 bg-blue-900 rounded-full"></div>
                       <span className="text-gray-700 font-medium">{feature}</span>
                     </div>
@@ -102,8 +102,8 @@ export default function Services() {
                 </div>
 
                 {/* CTA Button */}
-                <div className="pt-4">
-                  <button className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white ${service.bgColor} hover:opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1`}>
+                <div className="pt-4 scroll-animate">
+                  <button className="btn-primary card-hover group">
                     Conocer más
                     <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -113,8 +113,8 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''} scroll-animate`}>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl image-hover card-hover">
                   <Image
                     src={service.image}
                     alt={`${service.title} - Vada Health Argentina`}
@@ -125,8 +125,8 @@ export default function Services() {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
                 </div>
                 
-                {/* Floating badge */}
-                <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4">
+                {/* Floating badge simplificado */}
+                <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 scroll-animate">
                   <div className={`w-12 h-12 ${service.bgColor} rounded-full flex items-center justify-center text-white`}>
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -139,23 +139,23 @@ export default function Services() {
         </div>
 
         {/* Integration CTA */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-blue-900 to-teal-800 rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
+        <div className="mt-20 text-center scroll-animate">
+          <div className="gradient-animate rounded-2xl p-12 text-white glass-effect card-hover">
+            <h3 className="text-3xl font-bold mb-4 text-shadow scroll-animate">
               Solución Integral: Plataforma + Servicios
             </h3>
-            <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90">
+            <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90 scroll-animate">
               Potencia tu organización de salud con la combinación perfecta: nuestra plataforma digital de gestión médica 
               integrada con servicios especializados de auditoría, suministros y consultoría.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-blue-900 bg-white hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-animate">
+              <button className="btn-primary group" style={{backgroundColor: 'white', color: '#1e3a8a'}}>
                 Solicitar evaluación gratuita
                 <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
-              <button className="inline-flex items-center px-8 py-4 border-2 border-white text-base font-medium rounded-xl text-white bg-transparent hover:bg-white hover:text-blue-900 transition-all duration-200">
+              <button className="btn-secondary" style={{borderColor: 'white', color: 'white'}}>
                 Ver casos de éxito
               </button>
             </div>
