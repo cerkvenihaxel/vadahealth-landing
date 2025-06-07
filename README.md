@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vada Health Argentina - Landing Page
 
-## Getting Started
+Este es el sitio web institucional de Vada Health Argentina, desarrollado con Next.js y Tailwind CSS.
 
-First, run the development server:
+## Características
 
+- Diseño moderno y responsivo
+- Optimizado para SEO
+- Navegación intuitiva
+- Formulario de contacto
+- Secciones informativas sobre servicios y alianzas
+
+## Tecnologías Utilizadas
+
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- Headless UI
+- Framer Motion
+
+## Requisitos Previos
+
+- Node.js 18.17 o superior
+- npm o yarn
+
+## Instalación
+
+1. Clonar el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tu-usuario/vadahealth-landing.git
+cd vadahealth-landing
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instalar dependencias:
+```bash
+npm install
+# o
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Iniciar el servidor de desarrollo:
+```bash
+npm run dev
+# o
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-## Learn More
+## Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+vadahealth-landing/
+├── app/
+│   ├── components/     # Componentes reutilizables
+│   ├── sections/       # Secciones de la página
+│   ├── styles/         # Estilos globales
+│   ├── utils/          # Utilidades y helpers
+│   ├── layout.tsx      # Layout principal
+│   └── page.tsx        # Página principal
+├── public/            # Archivos estáticos
+└── ...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts Disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run start` - Inicia la aplicación en modo producción
+- `npm run lint` - Ejecuta el linter
 
-## Deploy on Vercel
+## Contribución
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## Contacto
+
+Vada Health Argentina - [comercial@vadahealth.com.ar](mailto:comercial@vadahealth.com.ar)
+
+Sitio Web: [https://vadahealth.com.ar](https://vadahealth.com.ar) 
