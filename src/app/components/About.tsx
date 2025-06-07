@@ -146,29 +146,81 @@ export default function About() {
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 text-white">
-            <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '2rem'
+        }} className="md:grid-cols-2">
+          <div style={{
+            background: 'linear-gradient(135deg, #1e3a8a, #1e40af)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            color: '#ffffff',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            <div style={{
+              width: '4rem',
+              height: '4rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              borderRadius: '0.75rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '1.5rem'
+            }}>
+              <svg style={{ height: '2rem', width: '2rem', color: '#ffffff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Misión</h3>
-            <p className="text-lg leading-relaxed">
+            <h3 style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              color: '#ffffff'
+            }}>Misión</h3>
+            <p style={{
+              fontSize: '1.125rem',
+              lineHeight: '1.625',
+              color: '#ffffff'
+            }}>
               Impulsar la eficiencia y calidad del sistema sanitario argentino a través de soluciones tecnológicas 
               innovadoras que integren plataformas digitales con servicios especializados de excelencia.
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-teal-800 to-teal-700 rounded-2xl p-8 text-white">
-            <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div style={{
+            background: 'linear-gradient(135deg, #115e59, #0f766e)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            color: '#ffffff',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            <div style={{
+              width: '4rem',
+              height: '4rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              borderRadius: '0.75rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '1.5rem'
+            }}>
+              <svg style={{ height: '2rem', width: '2rem', color: '#ffffff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Visión</h3>
-            <p className="text-lg leading-relaxed">
+            <h3 style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              color: '#ffffff'
+            }}>Visión</h3>
+            <p style={{
+              fontSize: '1.125rem',
+              lineHeight: '1.625',
+              color: '#ffffff'
+            }}>
               Ser la empresa referente en Latinoamérica en transformación digital de organizaciones de salud, 
               reconocida por la innovación, calidad de servicios y impacto positivo en la atención médica.
             </p>

@@ -127,10 +127,27 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-900 text-white px-8 py-4 rounded-xl hover:bg-blue-800 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                style={{
+                  width: '100%',
+                  backgroundColor: '#1e3a8a',
+                  color: 'white',
+                  padding: '1rem 2rem',
+                  borderRadius: '0.75rem',
+                  fontWeight: '500',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'opacity 0.2s ease',
+                  fontFamily: 'Inter, -apple-system, sans-serif'
+                }}
+                onMouseEnter={(e) => (e.target as HTMLElement).style.opacity = '0.9'}
+                onMouseLeave={(e) => (e.target as HTMLElement).style.opacity = '1'}
               >
                 Enviar consulta
-                <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg style={{ marginLeft: '0.5rem', height: '1.25rem', width: '1.25rem' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
@@ -184,23 +201,55 @@ export default function Contact() {
             </div>
 
             {/* CTA Cards */}
-            <div className="space-y-4">
-              <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl p-6 text-white">
-                <h4 className="font-bold text-lg mb-2">Demo de Plataforma</h4>
-                <p className="text-sm opacity-90 mb-4">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{
+                background: 'linear-gradient(to right, #1e3a8a, #1e40af)',
+                borderRadius: '0.75rem',
+                padding: '1.5rem',
+                color: 'white',
+                fontFamily: 'Inter, -apple-system, sans-serif'
+              }}>
+                <h4 style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem', color: '#ffffff' }}>Demo de Plataforma</h4>
+                <p style={{ fontSize: '0.875rem', opacity: 0.9, marginBottom: '1rem', color: '#ffffff' }}>
                   Agenda una demostración personalizada de nuestra plataforma digital integral.
                 </p>
-                <button className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
+                <button style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'opacity 0.2s ease'
+                }} onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.3)'} onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}>
                   Solicitar demo →
                 </button>
               </div>
 
-              <div className="bg-gradient-to-r from-teal-800 to-teal-700 rounded-xl p-6 text-white">
-                <h4 className="font-bold text-lg mb-2">Consultoría Gratuita</h4>
-                <p className="text-sm opacity-90 mb-4">
+              <div style={{
+                background: 'linear-gradient(to right, #115e59, #0f766e)',
+                borderRadius: '0.75rem',
+                padding: '1.5rem',
+                color: 'white',
+                fontFamily: 'Inter, -apple-system, sans-serif'
+              }}>
+                <h4 style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem', color: '#ffffff' }}>Consultoría Gratuita</h4>
+                <p style={{ fontSize: '0.875rem', opacity: 0.9, marginBottom: '1rem', color: '#ffffff' }}>
                   Evaluación sin costo de tus procesos actuales y oportunidades de mejora.
                 </p>
-                <button className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
+                <button style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'opacity 0.2s ease'
+                }} onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.3)'} onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}>
                   Agendar consulta →
                 </button>
               </div>
