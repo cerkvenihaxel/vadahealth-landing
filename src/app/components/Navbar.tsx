@@ -50,12 +50,10 @@ export default function Navbar() {
           </div>
           
           {/* Desktop menu */}
-          <div style={{
-            display: 'none',
-            '@media (min-width: 768px)': {
-              display: 'flex'
-            }
-          }} className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex" style={{
+            alignItems: 'center',
+            gap: '2rem'
+          }}>
             <Link href="/" style={{
               color: '#374151',
               textDecoration: 'none',
