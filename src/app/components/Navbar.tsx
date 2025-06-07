@@ -7,6 +7,22 @@ import VadaLogo from './VadaLogo';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e.target as HTMLAnchorElement).style.color = '#1e3a8a';
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e.target as HTMLAnchorElement).style.color = '#374151';
+  };
+
+  const handleButtonHover = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e.target as HTMLAnchorElement).style.opacity = '0.9';
+  };
+
+  const handleButtonLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e.target as HTMLAnchorElement).style.opacity = '1';
+  };
+
   return (
     <nav style={{
       position: 'fixed',
@@ -62,7 +78,7 @@ export default function Navbar() {
               fontWeight: '500',
               transition: 'color 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.color = '#1e3a8a'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               Inicio
             </Link>
             <Link href="#plataforma" style={{
@@ -73,7 +89,7 @@ export default function Navbar() {
               fontWeight: '500',
               transition: 'color 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.color = '#1e3a8a'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               Plataforma
             </Link>
             <Link href="#nosotros" style={{
@@ -84,7 +100,7 @@ export default function Navbar() {
               fontWeight: '500',
               transition: 'color 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.color = '#1e3a8a'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               Nosotros
             </Link>
             <Link href="#servicios" style={{
@@ -95,7 +111,7 @@ export default function Navbar() {
               fontWeight: '500',
               transition: 'color 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.color = '#1e3a8a'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               Servicios
             </Link>
             <Link href="#alianzas" style={{
@@ -106,7 +122,7 @@ export default function Navbar() {
               fontWeight: '500',
               transition: 'color 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.color = '#1e3a8a'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               Alianzas
             </Link>
             <Link href="#contacto" style={{
@@ -119,7 +135,7 @@ export default function Navbar() {
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               transition: 'opacity 0.2s ease',
               fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={(e) => e.target.style.opacity = '0.9'} onMouseLeave={(e) => e.target.style.opacity = '1'}>
+            }} onMouseEnter={handleButtonHover} onMouseLeave={handleButtonLeave}>
               Contacto
             </Link>
           </div>
@@ -169,79 +185,77 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div style={{ display: 'block' }} className="md:hidden">
-          <div style={{
-            padding: '0.5rem',
-            backgroundColor: 'white',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+        <div className="md:hidden" style={{
+          backgroundColor: 'white',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          padding: '0.5rem'
+        }}>
+          <Link href="/" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
           }}>
-            <Link href="/" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Inicio
-            </Link>
-            <Link href="#plataforma" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Plataforma
-            </Link>
-            <Link href="#nosotros" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Nosotros
-            </Link>
-            <Link href="#servicios" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Servicios
-            </Link>
-            <Link href="#alianzas" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Alianzas
-            </Link>
-            <Link href="#contacto" style={{
-              display: 'block',
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '1rem',
-              fontWeight: '500',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }}>
-              Contacto
-            </Link>
-          </div>
+            Inicio
+          </Link>
+          <Link href="#plataforma" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Plataforma
+          </Link>
+          <Link href="#nosotros" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Nosotros
+          </Link>
+          <Link href="#servicios" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Servicios
+          </Link>
+          <Link href="#alianzas" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Alianzas
+          </Link>
+          <Link href="#contacto" style={{
+            display: 'block',
+            color: '#374151',
+            textDecoration: 'none',
+            padding: '0.5rem 0.75rem',
+            fontSize: '1rem',
+            fontWeight: '500',
+            fontFamily: 'Inter, -apple-system, sans-serif'
+          }}>
+            Contacto
+          </Link>
         </div>
       )}
     </nav>
