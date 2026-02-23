@@ -1,37 +1,51 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Platform from './components/Platform';
-import About from './components/About';
-import { StatsSection } from '../components/AnimatedCounter';
-import Partnerships from './components/Partnerships';
-import Contact from './components/Contact';
+import TempHero from './components/TempHero';
+import QuienesSomos from './components/QuienesSomos';
+import PorQueElegirnos from './components/PorQueElegirnos';
+import ProblemSolution from './components/ProblemSolution';
+import AIPlatform from './components/AIPlatform';
+import Benefits from './components/Benefits';
+import HowItWorks from './components/HowItWorks';
+import DemoInteractiva from './components/DemoInteractiva';
+// import UseCases from './components/UseCases';
+import NewContact from './components/NewContact';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-20">
+      <main>
         <section id="hero">
-          <Hero />
+          <TempHero />
         </section>
-        <section id="servicios">
-          <Services />
+        <section id="quienes-somos">
+          <QuienesSomos />
+        </section>
+        <section id="por-que-elegirnos">
+          <PorQueElegirnos />
+        </section>
+        <section id="problema">
+          <ProblemSolution />
         </section>
         <section id="plataforma">
-          <Platform />
+          <AIPlatform />
         </section>
-        <StatsSection />
-        <section id="about">
-          <About />
+        <section id="beneficios">
+          <Benefits />
         </section>
-        <section id="testimonios">
-          <Partnerships />
+        <section id="como-funciona">
+          <HowItWorks />
         </section>
-        <section id="contacto">
-          <Contact />
+        <section id="demo">
+          <DemoInteractiva />
         </section>
-      </div>
+        {/* <section id="casos">
+          <UseCases />
+        </section> */}
+        <NewContact />
+      </main>
+      <Footer />
     </div>
   );
 }

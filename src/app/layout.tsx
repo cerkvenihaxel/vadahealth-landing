@@ -10,28 +10,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vada Health Argentina - Soluciones Digitales para la Salud",
-  description: "Facilitamos el crecimiento y la gestión de las organizaciones de salud a través de soluciones digitales innovadoras y eficientes.",
-  keywords: ["salud digital", "gestión hospitalaria", "auditoría médica", "telemedicina", "Argentina"],
-  authors: [{ name: "Vada Health Argentina" }],
-  creator: "Vada Health Argentina",
-  publisher: "Vada Health Argentina",
+  title: "VADA Health Argentina - Auditorías Médicas con IA",
+  description: "Revolucionamos las auditorías médicas con IA + Auditores Profesionales. Reducción de costos, rapidez y beneficios para pacientes.",
+  keywords: ["auditoría médica", "IA salud", "gestión hospitalaria", "Argentina", "VADA"],
+  authors: [{ name: "VADA Health Argentina" }],
+  creator: "VADA Health Argentina",
+  publisher: "VADA Health Argentina",
   robots: "index, follow",
   icons: {
     icon: [
       {
-        url: "/favicon.svg",
-        type: "image/svg+xml",
+        url: "/assets/vada-logo.png",
+        type: "image/png",
       },
     ],
     apple: [
       {
-        url: "/favicon.svg",
-        type: "image/svg+xml",
+        url: "/assets/vada-logo.png",
+        type: "image/png",
       },
     ],
   },
-  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -46,10 +45,9 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#1e3a8a" />
+        <link rel="icon" href="/assets/vada-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/vada-logo.png" />
+        <meta name="msapplication-TileColor" content="#1B3A5C" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}

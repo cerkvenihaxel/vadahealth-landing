@@ -2,260 +2,90 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import VadaLogo from './VadaLogo';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    (e.target as HTMLAnchorElement).style.color = '#1e3a8a';
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    (e.target as HTMLAnchorElement).style.color = '#374151';
-  };
-
-  const handleButtonHover = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    (e.target as HTMLAnchorElement).style.opacity = '0.9';
-  };
-
-  const handleButtonLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    (e.target as HTMLAnchorElement).style.opacity = '1';
-  };
-
   return (
-    <nav style={{
-      position: 'fixed',
-      width: '100%',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(12px)',
-      zIndex: 1000,
-      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-      borderBottom: '1px solid rgba(229, 231, 235, 0.8)',
-      top: 0,
-      left: 0,
-      right: 0
-    }}>
-      <div style={{
-        maxWidth: '80rem',
-        margin: '0 auto',
-        padding: '0 1rem'
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          height: '5rem',
-          alignItems: 'center'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Link href="/" style={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              textDecoration: 'none'
-            }}>
-              <VadaLogo size="md" className="mr-3" />
-              <span style={{
-                fontSize: '1.5rem',
-                fontWeight: '700',
-                color: '#1e3a8a',
-                fontFamily: 'Inter, -apple-system, sans-serif'
-              }}>
-                Vada Health
-              </span>
-            </Link>
-          </div>
+    <nav className="fixed w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center h-20">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/assets/vada-logo.png"
+              alt="VADA Health Argentina"
+              width={120}
+              height={48}
+              priority
+              className="object-contain"
+            />
+          </Link>
           
-          {/* Desktop menu */}
-          <div className="hidden md:flex" style={{
-            alignItems: 'center',
-            gap: '2rem'
-          }}>
-            <Link href="/" style={{
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              transition: 'color 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="#hero" className="text-gray-700 hover:text-vada-navy font-medium transition-colors">
               Inicio
             </Link>
-            <Link href="#plataforma" style={{
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              transition: 'color 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Link href="#problema" className="text-gray-700 hover:text-vada-navy font-medium transition-colors">
+              Solución
+            </Link>
+            <Link href="#plataforma" className="text-gray-700 hover:text-vada-navy font-medium transition-colors">
               Plataforma
             </Link>
-            <Link href="#nosotros" style={{
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              transition: 'color 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              Nosotros
+            <Link href="#beneficios" className="text-gray-700 hover:text-vada-navy font-medium transition-colors">
+              Beneficios
             </Link>
-            <Link href="#servicios" style={{
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              transition: 'color 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              Servicios
+            <Link href="#casos" className="text-gray-700 hover:text-vada-navy font-medium transition-colors">
+              Casos de Éxito
             </Link>
-            <Link href="#alianzas" style={{
-              color: '#374151',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              transition: 'color 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              Alianzas
-            </Link>
-            <Link href="#contacto" style={{
-              backgroundColor: '#1e3a8a',
-              color: 'white',
-              padding: '0.5rem 1.5rem',
-              borderRadius: '0.75rem',
-              fontWeight: '500',
-              textDecoration: 'none',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              transition: 'opacity 0.2s ease',
-              fontFamily: 'Inter, -apple-system, sans-serif'
-            }} onMouseEnter={handleButtonHover} onMouseLeave={handleButtonLeave}>
-              Contacto
+            <Link
+              href="#contacto"
+              className="px-6 py-2.5 bg-vada-navy text-white font-semibold rounded-xl hover:bg-blue-900 transition-all shadow-md hover:shadow-lg"
+            >
+              Solicitar Demo
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0.5rem',
-                borderRadius: '0.375rem',
-                color: '#374151',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer'
-              }}
-            >
-              <svg
-                style={{ height: '1.5rem', width: '1.5rem' }}
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden" style={{
-          backgroundColor: 'white',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          padding: '0.5rem'
-        }}>
-          <Link href="/" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Inicio
-          </Link>
-          <Link href="#plataforma" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Plataforma
-          </Link>
-          <Link href="#nosotros" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Nosotros
-          </Link>
-          <Link href="#servicios" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Servicios
-          </Link>
-          <Link href="#alianzas" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Alianzas
-          </Link>
-          <Link href="#contacto" style={{
-            display: 'block',
-            color: '#374151',
-            textDecoration: 'none',
-            padding: '0.5rem 0.75rem',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'Inter, -apple-system, sans-serif'
-          }}>
-            Contacto
-          </Link>
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <div className="px-4 py-4 space-y-3">
+            <Link href="#hero" className="block py-2 text-gray-700 hover:text-vada-navy font-medium">
+              Inicio
+            </Link>
+            <Link href="#problema" className="block py-2 text-gray-700 hover:text-vada-navy font-medium">
+              Solución
+            </Link>
+            <Link href="#plataforma" className="block py-2 text-gray-700 hover:text-vada-navy font-medium">
+              Plataforma
+            </Link>
+            <Link href="#beneficios" className="block py-2 text-gray-700 hover:text-vada-navy font-medium">
+              Beneficios
+            </Link>
+            <Link href="#casos" className="block py-2 text-gray-700 hover:text-vada-navy font-medium">
+              Casos de Éxito
+            </Link>
+            <Link
+              href="#contacto"
+              className="block py-2.5 px-4 bg-vada-navy text-white font-semibold rounded-xl text-center"
+            >
+              Solicitar Demo
+            </Link>
+          </div>
         </div>
       )}
     </nav>
